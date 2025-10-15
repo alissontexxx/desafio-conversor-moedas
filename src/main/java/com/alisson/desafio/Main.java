@@ -2,6 +2,9 @@ package com.alisson.desafio;
 
 import java.util.Scanner;
 
+import classes.ConsultarMoeda;
+import classes.Moeda;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Sistema de conversor de moedas!");
@@ -14,6 +17,25 @@ public class Main {
         while (opcao != 7) {
             menu();
             opcao = sc.nextInt();
+
+            try {
+                switch (opcao) {
+                    case 1:
+                        // System.out.print("Digite o valor em Dólar: ");
+                        // valor = sc.nextDouble();
+                        ConsultarMoeda moeda = new ConsultarMoeda();
+                        System.out.println(moeda.buscarMoeda("PYG"));
+                        break;
+
+                    default:
+                        System.out.println("Opção inválida!");
+                        break;
+                }
+
+            } catch (Exception e) {
+                System.out.println("Erro ao buscar a moeda!");
+            }
+
         }
 
         sc.close();

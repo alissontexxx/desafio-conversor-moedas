@@ -1,12 +1,23 @@
 package classes;
 
-public class Moeda {
-    private String nome;
-    private double valor;
+import java.util.List;
 
-    public Moeda(String nome, double valor) {
+public class Moeda {
+
+    List<String> conversion_rates;
+    private String nome;
+
+    public Moeda(List<String> conversion_rates, String nome) {
+        this.conversion_rates = conversion_rates;
         this.nome = nome;
-        this.valor = valor;
+    }
+
+    public List<String> getConversion_rates() {
+        return this.conversion_rates;
+    }
+
+    public void setConversion_rates(List<String> conversion_rates) {
+        this.conversion_rates = conversion_rates;
     }
 
     public String getNome() {
@@ -17,12 +28,12 @@ public class Moeda {
         this.nome = nome;
     }
 
-    public double getValor() {
-        return this.valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
+    @Override
+    public String toString() {
+        return "{" +
+                " conversion_rates='" + getConversion_rates() + "'" +
+                ", nome='" + getNome() + "'" +
+                "}";
     }
 
 }
