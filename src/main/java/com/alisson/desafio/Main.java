@@ -24,7 +24,7 @@ public class Main {
                         // System.out.print("Digite o valor em Dólar: ");
                         // valor = sc.nextDouble();
                         ConsultarMoeda moeda = new ConsultarMoeda();
-                        System.out.println(moeda.buscarMoeda("PYG"));
+                        System.out.println(moeda.buscarMoeda("USD"));
                         break;
 
                     default:

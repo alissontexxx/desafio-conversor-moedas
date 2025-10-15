@@ -1,38 +1,25 @@
 package classes;
 
-import java.util.List;
-
 public class Moeda {
 
-    List<String> conversion_rates;
-    private String nome;
+    private String result;
 
-    public Moeda(List<String> conversion_rates, String nome) {
-        this.conversion_rates = conversion_rates;
-        this.nome = nome;
+    public Moeda(String result) {
+        this.result = result;
     }
 
-    public List<String> getConversion_rates() {
-        return this.conversion_rates;
+    public String getResult() {
+        return this.result;
     }
 
-    public void setConversion_rates(List<String> conversion_rates) {
-        this.conversion_rates = conversion_rates;
-    }
-
-    public String getNome() {
-        return this.nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setResult(String result) {
+        this.result = result;
     }
 
     @Override
     public String toString() {
         return "{" +
-                " conversion_rates='" + getConversion_rates() + "'" +
-                ", nome='" + getNome() + "'" +
+                " result='" + getResult() + "'" +
                 "}";
     }
 

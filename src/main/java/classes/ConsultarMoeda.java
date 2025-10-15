@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 
 public class ConsultarMoeda {
 
-    public String buscarMoeda(String nome) {
+    public Moeda buscarMoeda(String nome) {
 
         URI moeda = URI.create("https://v6.exchangerate-api.com/v6/d60149fd28191017c723cad7/latest/" + nome);
 
@@ -18,8 +18,8 @@ public class ConsultarMoeda {
 
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            // return new Gson().fromJson(response.body(), Moeda.class);
-            return response.body();
+            return new Gson().fromJson(response.body(), Moeda.class);
+
         } catch (Exception e) {
             throw new RuntimeException("Erro ao buscar a moeda escolhida!");
         }
