@@ -34,7 +34,7 @@ public class Main {
                         if (moedaRecebida != null) {
                             double valorConvertido = valor * moedaRecebida;
                             // System.out.println("Valor convertido: " + valorConvertido);
-                            System.out.printf("Valor de %.2f [USD] corresponde ao valor final de ==> %.2f [ARS]\n",
+                            System.out.printf("Valor de %.2f [USD] corresponde ao valor final de ==> %.2f [ARS]\n\n",
                                     valor,
                                     valorConvertido);
                         }
@@ -50,7 +50,71 @@ public class Main {
                         if (moedaRecebida != null) {
                             double valorConvertido = valor * moedaRecebida;
                             // System.out.println("Valor convertido: " + valorConvertido);
-                            System.out.printf("Valor de %.2f [ARS] corresponde ao valor final de ==> %.2f [USD]\n",
+                            System.out.printf("Valor de %.2f [ARS] corresponde ao valor final de ==> %.2f [USD]\n\n",
+                                    valor,
+                                    valorConvertido);
+                        }
+                        break;
+                    case 3:
+                        System.out.print("Digite o valor em Dólar: ");
+                        valor = sc.nextDouble();
+                        // ConsultarMoeda moeda = new ConsultarMoeda();
+                        moedaBuscada = moeda.buscarMoeda("USD");
+                        moedaRecebida = moedaBuscada.getConversionRates().get("BRL");
+                        // Double euro = moedaDolar.getConversionRates().get("EUR");
+
+                        if (moedaRecebida != null) {
+                            double valorConvertido = valor * moedaRecebida;
+                            // System.out.println("Valor convertido: " + valorConvertido);
+                            System.out.printf("Valor de %.2f [USD] corresponde ao valor final de ==> %.2f [BRL]\n\n",
+                                    valor,
+                                    valorConvertido);
+                        }
+                        break;
+                    case 4:
+                        System.out.print("Digite o valor em Real Brasileiro: ");
+                        valor = sc.nextDouble();
+                        // ConsultarMoeda moeda = new ConsultarMoeda();
+                        moedaBuscada = moeda.buscarMoeda("BRL");
+                        moedaRecebida = moedaBuscada.getConversionRates().get("USD");
+                        // Double euro = moedaDolar.getConversionRates().get("EUR");
+
+                        if (moedaRecebida != null) {
+                            double valorConvertido = valor * moedaRecebida;
+                            // System.out.println("Valor convertido: " + valorConvertido);
+                            System.out.printf("Valor de %.2f [BRL] corresponde ao valor final de ==> %.2f [USD]\n\n",
+                                    valor,
+                                    valorConvertido);
+                        }
+                        break;
+                    case 5:
+                        System.out.print("Digite o valor em Dólar: ");
+                        valor = sc.nextDouble();
+                        // ConsultarMoeda moeda = new ConsultarMoeda();
+                        moedaBuscada = moeda.buscarMoeda("USD");
+                        moedaRecebida = moedaBuscada.getConversionRates().get("COP");
+                        // Double euro = moedaDolar.getConversionRates().get("EUR");
+
+                        if (moedaRecebida != null) {
+                            double valorConvertido = valor * moedaRecebida;
+                            // System.out.println("Valor convertido: " + valorConvertido);
+                            System.out.printf("Valor de %.2f [USD] corresponde ao valor final de ==> %.2f [COP]\n\n",
+                                    valor,
+                                    valorConvertido);
+                        }
+                        break;
+                    case 6:
+                        System.out.print("Digite o valor em Peso Colombiano: ");
+                        valor = sc.nextDouble();
+                        // ConsultarMoeda moeda = new ConsultarMoeda();
+                        moedaBuscada = moeda.buscarMoeda("COP");
+                        moedaRecebida = moedaBuscada.getConversionRates().get("USD");
+                        // Double euro = moedaDolar.getConversionRates().get("EUR");
+
+                        if (moedaRecebida != null) {
+                            double valorConvertido = valor * moedaRecebida;
+                            // System.out.println("Valor convertido: " + valorConvertido);
+                            System.out.printf("Valor de %.2f [COP] corresponde ao valor final de ==> %.2f [USD]\n\n",
                                     valor,
                                     valorConvertido);
                         }
