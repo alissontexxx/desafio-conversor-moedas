@@ -13,6 +13,9 @@ public class Main {
 
         int opcao = 0;
         double valor = 0;
+        ConsultarMoeda moeda = new ConsultarMoeda();
+        Moeda moedaBuscada;
+        Double moedaRecebida = 0.0;
 
         while (opcao != 7) {
             menu();
@@ -21,10 +24,40 @@ public class Main {
             try {
                 switch (opcao) {
                     case 1:
-                        // System.out.print("Digite o valor em Dólar: ");
-                        // valor = sc.nextDouble();
-                        ConsultarMoeda moeda = new ConsultarMoeda();
-                        System.out.println(moeda.buscarMoeda("USD"));
+                        System.out.print("Digite o valor em Dólar: ");
+                        valor = sc.nextDouble();
+                        // ConsultarMoeda moeda = new ConsultarMoeda();
+                        moedaBuscada = moeda.buscarMoeda("USD");
+                        moedaRecebida = moedaBuscada.getConversionRates().get("ARS");
+                        // Double euro = moedaDolar.getConversionRates().get("EUR");
+
+                        if (moedaRecebida != null) {
+                            double valorConvertido = valor * moedaRecebida;
+                            // System.out.println("Valor convertido: " + valorConvertido);
+                            System.out.printf("Valor de %.2f [USD] corresponde ao valor final de ==> %.2f [ARS]\n",
+                                    valor,
+                                    valorConvertido);
+                        }
+                        break;
+                    case 2:
+                        System.out.print("Digite o valor em Peso Argentino: ");
+                        valor = sc.nextDouble();
+                        // ConsultarMoeda moeda = new ConsultarMoeda();
+                        moedaBuscada = moeda.buscarMoeda("ARS");
+                        moedaRecebida = moedaBuscada.getConversionRates().get("USD");
+                        // Double euro = moedaDolar.getConversionRates().get("EUR");
+
+                        if (moedaRecebida != null) {
+                            double valorConvertido = valor * moedaRecebida;
+                            // System.out.println("Valor convertido: " + valorConvertido);
+                            System.out.printf("Valor de %.2f [ARS] corresponde ao valor final de ==> %.2f [USD]\n",
+                                    valor,
+                                    valorConvertido);
+                        }
+                        break;
+                    // saindo do programa
+                    case 7:
+                        System.out.println("Saindo...");
                         break;
 
                     default:

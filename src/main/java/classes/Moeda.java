@@ -1,26 +1,13 @@
 package classes;
 
+import java.util.Map;
+
 public class Moeda {
 
-    private String result;
+    private Map<String, Double> conversion_rates;
 
-    public Moeda(String result) {
-        this.result = result;
-    }
-
-    public String getResult() {
-        return this.result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-                " result='" + getResult() + "'" +
-                "}";
+    public Map<String, Double> getConversionRates() {
+        return conversion_rates;
     }
 
 }
